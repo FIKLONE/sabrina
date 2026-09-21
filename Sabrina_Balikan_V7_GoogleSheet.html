@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Untuk Sabrina</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@400;500&display=swap');
+
+:root{
+  --sky:#9bb9ca;
+  --sky-deep:#789bae;
+  --sky-dark:#496d81;
+  --ivory:#f7f4ef;
+  --ink:#293942;
+  --text-soft:#eaf0f2;
+  --her:#f8f6f1;
+  --me:#d7e5eb;
+  --line:#ffffff45;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sky);color:var(--ink);font-family:"DM Sans",sans-serif}
+section{min-height:100vh;padding:80px 6vw;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+section:before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(135deg,#ffffff0c,transparent 45%,#27485b10);
+}
+.hero{
+  background:
+    radial-gradient(ellipse at 50% 0,#dce9ee55,transparent 40%),
+    linear-gradient(160deg,#8faebf,#b8ccd5 65%,#d9e1e2);
+  text-align:center;
+}
+.hero-inner{position:relative;z-index:2}
+.eyebrow{font-size:9px;letter-spacing:.3em;text-transform:uppercase;opacity:.55}
+.hero h1{
+  font:italic 400 clamp(75px,12vw,125px)/.78 "Cormorant Garamond",serif;
+  color:#fff;margin:30px 0 24px;text-shadow:0 8px 30px #405e6d25;
+}
+.hero p{font:18px/1.75 "Cormorant Garamond",serif;color:#304a58}
+.btn{
+  margin-top:27px;padding:13px 25px;border:1px solid #ffffffaa;
+  background:#ffffff2e;color:#fff;border-radius:3px;cursor:pointer;
+  transition:.3s;letter-spacing:.02em
+}
+.btn:hover{background:#fff;color:#496d81;transform:translateY(-2px)}
+
+.chat-section{
+  background:linear-gradient(135deg,#e9f0f2,#d2e0e5);
+  color:var(--ink);
+}
+.phone{
+  width:min(450px,100%);height:min(750px,86vh);min-height:620px;
+  background:#edf2f3;border:1px solid #698999;border-radius:18px;
+  box-shadow:0 30px 80px #29465325;overflow:hidden;display:flex;flex-direction:column
+}
+.phone-bar{
+  height:66px;background:#f8f8f6;border-bottom:1px solid #d5dfe2;
+  display:flex;align-items:center;padding:0 18px
+}
+.avatar{
+  width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+  background:#91adbb;color:#fff;font-family:Georgia,serif
+}
+.profile{margin-left:10px}.profile b{display:block;font-size:13px;font-weight:500}.profile span{font-size:9px;color:#7b8b91}
+.chat{
+  flex:1;overflow:auto;padding:18px 17px;
+  display:flex;flex-direction:column;gap:7px;
+  background:linear-gradient(180deg,#edf3f5,#e5edef)
+}
+.date{text-align:center;color:#83949b;font-size:9px;margin:3px 0 12px}
+.bubble{
+  max-width:78%;padding:11px 15px;border-radius:14px;
+  font-size:13px;line-height:1.5;box-shadow:0 3px 8px #29465318;
+  color:#33454e;
+}
+.chat-mini .bubble{color:#33454e;}
+
+.her{align-self:flex-start;background:var(--her);border-bottom-left-radius:3px}
+.me{align-self:flex-end;background:var(--me);border-bottom-right-radius:3px}
+.time{font-size:8px;color:#87969b;margin:-3px 5px 2px}
+.me-time{align-self:flex-end}.her-time{align-self:flex-start}
+.chat-note{
+  margin:15px 20px 2px;text-align:center;
+  font:italic 17px "Cormorant Garamond",serif;color:#607883
+}
+.next{
+  margin:10px auto 0;border:0;background:transparent;color:#496d81;
+  text-decoration:underline;cursor:pointer;font-size:11px
+}
+
+.dark{
+  background:
+    linear-gradient(145deg,#587b8c,#456879);
+  color:#fff;
+}
+.inner{width:min(780px,100%);text-align:center;position:relative;z-index:1}
+.title{
+  font:400 clamp(50px,7vw,80px)/.94 "Cormorant Garamond",serif;
+  margin:20px 0
+}
+.body{
+  font:18px/1.9 "Cormorant Garamond",serif;
+  color:#e9f0f2;max-width:650px;margin:14px auto
+}
+.paper{background:var(--ivory);color:var(--ink)}
+.paper .body{color:#5e696d}
+
+.chat-mini{width:min(570px,100%);margin:38px auto;text-align:left;padding:8px 0}
+.chat-mini .bubble{display:block;width:max-content;margin:10px 0}
+.chat-mini .me{margin-left:auto}
+
+.question{
+  background:linear-gradient(145deg,#6f92a3,#557a8c);
+  color:#fff;text-align:center
+}
+.question .body{color:#edf4f6}
+.options{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:35px
+}
+.option{
+  padding:13px 20px;border:1px solid #ffffff66;background:#ffffff10;
+  color:#fff;border-radius:3px;cursor:pointer;transition:.3s
+}
+.option:hover{background:#f8f6f1;color:#496d81;transform:translateY(-2px)}
+
+.result{display:none;background:var(--ivory);color:var(--ink);text-align:center}
+.result.show{display:flex}
+.result h2{font:400 65px "Cormorant Garamond",serif;margin:20px 0}
+.result p{font:18px/1.8 "Cormorant Garamond",serif;color:#626d70;max-width:620px;margin:0 auto}
+.code{
+  display:inline-block;margin-top:22px;padding:12px 17px;
+  border:1px dashed #8aa0a9;border-radius:3px;
+  font:11px monospace;letter-spacing:.12em
+}
+.fade{animation:fade .8s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+@media(max-width:600px){
+  section{padding:55px 5vw}
+  .phone{height:650px}
+  .hero h1{font-size:70px}
+  .title{font-size:50px}
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-inner fade">
+    <div class="eyebrow">buat Sabrina</div>
+    <h1>sebentar...</h1>
+    <p>aku mau ngomong sesuatu.<br>kali ini lewat sini aja.</p>
+    <button class="btn" onclick="go('chat')">baca →</button>
+  </div>
+</section>
+
+<section class="chat-section" id="chat">
+  <div class="phone">
+    <div class="phone-bar">
+      <div class="avatar">S</div>
+      <div class="profile">
+        <b>Sabrina</b>
+        <span>online</span>
+      </div>
+    </div>
+
+    <div class="chat">
+      <div class="date">chat kita</div>
+
+      <!-- Hanya percakapan yang memang sudah kamu ceritakan -->
+      <div class="me bubble">main yuk</div>
+      <div class="her bubble">ayoo</div>
+      <div class="me bubble">yaudah aku izin mami kamu dulu</div>
+      <div class="her bubble">ya sok</div>
+      <div class="me bubble">wkwkwk</div>
+
+      <div class="chat-note">gatau kenapa, aku masih suka bagian sesimpel ini.</div>
+
+      <button class="next" onclick="go('thought')">lanjut ↓</button>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="thought">
+  <div class="inner">
+    <div class="eyebrow">terus aku mikir</div>
+    <h2 class="title">gatau kenapa...</h2>
+
+    <div class="chat-mini">
+      <div class="me bubble">nanti main lagi?</div>
+      <div class="her bubble">boleh</div>
+      <div class="me bubble">okee</div>
+      <div class="her bubble">wkwk</div>
+    </div>
+
+    <p class="body">aku nggak mau bikin cerita seolah-olah kita udah nggak pernah ngobrol atau ketemu.</p>
+    <p class="body">karena kenyataannya kita masih suka ketemu, masih suka main, masih chatan, dan masih teleponan.</p>
+
+    <button class="next" style="color:#f1f6f7" onclick="go('honest')">lanjut ↓</button>
+  </div>
+</section>
+
+<section class="paper" id="honest">
+  <div class="inner">
+    <div class="eyebrow">yang aku tahu dari aku sendiri</div>
+    <h2 class="title">aku masih suka kalau kita ketemu.</h2>
+    <p class="body">masih suka kalau kita main.</p>
+    <p class="body">masih suka ngobrol sama kamu.</p>
+    <p class="body">dan gatau kenapa, aku masih nyaman aja.</p>
+    <p class="body">kalau kamu gimana, aku gatau hehe.</p>
+
+    <button class="next" style="color:#496d81" onclick="go('question')">
+      aku mau nanya sesuatu →
+    </button>
+  </div>
+</section>
+
+<section class="question" id="question">
+  <div class="inner">
+    <div class="eyebrow">nah, ini yang sebenernya mau aku tanyain</div>
+    <h2 class="title">aku masih pengen kita.</h2>
+
+    <div class="chat-mini">
+      <div class="me bubble">aku boleh jujur nggak?</div>
+      <div class="her bubble">boleh</div>
+      <div class="me bubble">aku masih pengen kita.</div>
+      <div class="typing" style="font-size:10px;opacity:.72;margin:10px 4px">Sabrina sedang mengetik...</div>
+    </div>
+
+    <p class="body">kalau aku ngajak kita coba lagi...</p>
+    <p class="body">kamu bakal jawab apa?</p>
+
+    <div class="options">
+      <button class="option" onclick="answer('YES')">yaudah... coba lagi</button>
+      <button class="option" onclick="answer('SLOW')">pelan-pelan dulu ya</button>
+      <button class="option" onclick="answer('MAYBE')">aku masih bingung</button>
+      <button class="option" onclick="answer('NO')">maaf...</button>
+    </div>
+  </div>
+</section>
+
+<section class="result" id="result">
+  <div class="inner">
+    <div style="font-size:50px">♡</div>
+    <div class="eyebrow">jawaban kamu</div>
+    <h2 id="rTitle"></h2>
+    <p id="rText"></p>
+    <div class="code" id="code"></div>
+    <p style="font-size:11px;opacity:.55;margin-top:20px">
+      kalau mau, screenshot bagian ini dan kirim ke aku.
+    </p>
+  </div>
+</section>
+
+<script>
+function go(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbx_OvYnoK7IuykfsfESn5nsLKnY6G7OHth6QstLAKyxNprixVshwolAbm0_rb917YixVA/exec";
+
+function sendAnswerToSheet(v){
+  fetch(GOOGLE_SHEET_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+    },
+    body: new URLSearchParams({jawaban: v}).toString()
+  }).catch(()=>{});
+}
+
+function answer(v){
+  sendAnswerToSheet(v);
+
+  document.querySelectorAll("body>section").forEach(s=>{
+    if(s.id!=="result") s.style.display="none";
+  });
+
+  const data={
+    YES:[
+      "jadi... kita coba lagi?",
+      "jujur aku seneng banget baca jawaban ini 😭. kita nggak perlu buru-buru. mulai lagi pelan-pelan aja."
+    ],
+    SLOW:[
+      "pelan-pelan juga nggak apa-apa.",
+      "aku nggak minta semuanya langsung kembali seperti dulu. mulai dari ngobrol lagi aja."
+    ],
+    MAYBE:[
+      "nggak apa-apa kalau kamu masih bingung.",
+      "aku juga sempat bingung mau ngomong ini. jadi nggak perlu buru-buru."
+    ],
+    NO:[
+      "aku ngerti.",
+      "makasih udah baca sampai sini dan udah jujur. aku tetap menghargai jawaban kamu."
+    ]
+  }[v];
+
+  document.getElementById("rTitle").textContent=data[0];
+  document.getElementById("rText").textContent=data[1];
+  document.getElementById("code").textContent=
+    "SABRINA-"+v+"-"+Math.random().toString(36).slice(2,7).toUpperCase();
+
+  document.getElementById("result").classList.add("show");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+</script>
+</body>
+</html>
